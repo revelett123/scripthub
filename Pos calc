@@ -1,0 +1,219 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88    @uniquadev
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
+]=]
+
+-- Instances: 10 | Scripts: 3 | Modules: 0 | Tags: 0
+local G2L = {};
+
+-- StarterGui.ScreenGui
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+
+
+
+-- StarterGui.ScreenGui.Frame
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 0;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(76, 76, 76);
+G2L["2"]["Size"] = UDim2.new(0, 415, 0, 274);
+G2L["2"]["Position"] = UDim2.new(0.35018, 0, 0.31418, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.ScreenGui.Frame.PositionLabel
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["3"]["TextSize"] = 14;
+G2L["3"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0, 398, 0, 66);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[POSTION:]];
+G2L["3"]["Name"] = [[PositionLabel]];
+G2L["3"]["Position"] = UDim2.new(0.01928, 0, 0.20635, 0);
+
+
+-- StarterGui.ScreenGui.Frame.Gen
+G2L["4"] = Instance.new("TextButton", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["TextSize"] = 40;
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["4"]["Size"] = UDim2.new(0, 398, 0, 60);
+G2L["4"]["Name"] = [[Gen]];
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[generate]];
+G2L["4"]["Position"] = UDim2.new(0.01928, 0, 0.4898, 0);
+
+
+-- StarterGui.ScreenGui.Frame.Gen.LocalScript
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+
+
+
+-- StarterGui.ScreenGui.Frame.Copy
+G2L["6"] = Instance.new("TextButton", G2L["2"]);
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["TextSize"] = 40;
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(48, 48, 48);
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["6"]["Size"] = UDim2.new(0, 398, 0, 57);
+G2L["6"]["Name"] = [[Copy]];
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[copy]];
+G2L["6"]["Position"] = UDim2.new(0.01928, 0, 0.73921, 0);
+
+
+-- StarterGui.ScreenGui.Frame.Copy.LocalScript
+G2L["7"] = Instance.new("LocalScript", G2L["6"]);
+
+
+
+-- StarterGui.ScreenGui.Frame.Frame
+G2L["8"] = Instance.new("Frame", G2L["2"]);
+G2L["8"]["BorderSizePixel"] = 0;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Size"] = UDim2.new(0, 415, 0, 48);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+
+
+-- StarterGui.ScreenGui.Frame.Frame.TextLabel
+G2L["9"] = Instance.new("TextLabel", G2L["8"]);
+G2L["9"]["BorderSizePixel"] = 0;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["TextSize"] = 27;
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["9"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["BackgroundTransparency"] = 1;
+G2L["9"]["Size"] = UDim2.new(0, 415, 0, 50);
+G2L["9"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["9"]["Text"] = [[FLUXWARE POSTION FINDER]];
+
+
+-- StarterGui.ScreenGui.Frame.LocalScript
+G2L["a"] = Instance.new("LocalScript", G2L["2"]);
+
+
+
+-- StarterGui.ScreenGui.Frame.Gen.LocalScript
+local function C_5()
+local script = G2L["5"];
+	-- Get references to the GUI elements
+	local button = script.Parent
+	local textLabel = button.Parent:WaitForChild("PositionLabel")
+	
+	-- Function to get and display the player's position
+	local function displayPosition()
+		-- Get the local player
+		local player = game.Players.LocalPlayer
+	
+		-- Ensure the player and their character exist
+		if player and player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+			local position = player.Character.HumanoidRootPart.Position
+			-- Update the TextLabel with the player's position
+			textLabel.Text = "" .. tostring(position)
+		else
+			textLabel.Text = "No position data available."
+		end
+	end
+	
+	-- Connect the function to the button's click event
+	button.MouseButton1Click:Connect(displayPosition)
+	
+end;
+task.spawn(C_5);
+-- StarterGui.ScreenGui.Frame.Copy.LocalScript
+local function C_7()
+local script = G2L["7"];
+	-- Get references to the GUI elements
+	local copyButton = script.Parent
+	local textLabel = copyButton.Parent:WaitForChild("PositionLabel")
+	
+	-- Function to copy text to clipboard
+	local function copyTextToClipboard()
+		-- Get the text from the TextLabel
+		local textToCopy = textLabel.Text
+	
+		-- Copy the text to the clipboard
+		setclipboard(textToCopy)
+	
+		-- Optionally, give feedback to the player
+		textLabel.Text = "Copied: " .. textToCopy
+	
+		-- Optionally, reset the text after a short delay
+		wait(2) -- Wait for 2 seconds
+		textLabel.Text = textToCopy
+	end
+	
+	-- Connect the function to the button's click event
+	copyButton.MouseButton1Click:Connect(copyTextToClipboard)
+end;
+task.spawn(C_7);
+-- StarterGui.ScreenGui.Frame.LocalScript
+local function C_a()
+local script = G2L["a"];
+
+local UserInputService = game:GetService("UserInputService")
+local runService = (game:GetService("RunService"));
+
+local gui = script.Parent
+
+local dragging
+local dragInput
+local dragStart
+local startPos
+
+function Lerp(a, b, m)
+	return a + (b - a) * m
+end;
+
+local lastMousePos
+local lastGoalPos
+local DRAG_SPEED = (8); -- // The speed of the UI darg.
+function Update(dt)
+	if not (startPos) then return end;
+	if not (dragging) and (lastGoalPos) then
+		gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, lastGoalPos.X.Offset, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, lastGoalPos.Y.Offset, dt * DRAG_SPEED))
+		return 
+	end;
+
+	local delta = (lastMousePos - UserInputService:GetMouseLocation())
+	local xGoal = (startPos.X.Offset - delta.X);
+	local yGoal = (startPos.Y.Offset - delta.Y);
+	lastGoalPos = UDim2.new(startPos.X.Scale, xGoal, startPos.Y.Scale, yGoal)
+	gui.Position = UDim2.new(startPos.X.Scale, Lerp(gui.Position.X.Offset, xGoal, dt * DRAG_SPEED), startPos.Y.Scale, Lerp(gui.Position.Y.Offset, yGoal, dt * DRAG_SPEED))
+end;
+
+gui.InputBegan:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+		dragging = true
+		dragStart = input.Position
+		startPos = gui.Position
+		lastMousePos = UserInputService:GetMouseLocation()
+
+		input.Changed:Connect(function()
+			if input.UserInputState == Enum.UserInputState.End then
+				dragging = false
+			end
+		end)
+	end
+end)
+
+gui.InputChanged:Connect(function(input)
+	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+		dragInput = input
+	end
+end)
+
+runService.Heartbeat:Connect(Update)
+end;
+task.spawn(C_a);
+
+return G2L["1"], require;
